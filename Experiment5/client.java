@@ -27,33 +27,39 @@ public class client{
         // type of matrix using random
         int typeOfMatrix = rand.nextInt(4);
 
-        if (typeOfMatrix == 0){
-            // upper triangular
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (i>j){
-                        matrix[i][j] = 0;
-                    }   
+        switch (typeOfMatrix) {
+            case 0:
+                // upper triangular
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < n; j++) {
+                        if (i > j) {
+                            matrix[i][j] = 0;
+                        }
+                    }
                 }
-            }
-        } else if (typeOfMatrix == 1) {
-            // lower triangular matrix
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (i<j){
-                        matrix[i][j] = 0;
-                    }   
+                break;
+            case 1:
+                // lower triangular matrix
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < n; j++) {
+                        if (i < j) {
+                            matrix[i][j] = 0;
+                        }
+                    }
                 }
-            }  
-        } else if (typeOfMatrix == 2) {
-            // Diagonal Matrix
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (i!=j){
-                        matrix[i][j] = 0;
-                    }   
+                break;
+            case 2:
+                // Diagonal Matrix
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < n; j++) {
+                        if (i != j) {
+                            matrix[i][j] = 0;
+                        }
+                    }
                 }
-            }  
+                break;
+            default:
+                break;
         }
 
         System.out.println("Generated matrix: ");
